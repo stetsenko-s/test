@@ -1,0 +1,242 @@
+$color: dimgrey;
+$color2: rgb(199, 199, 199);
+
+.overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+.popup {
+    text-align: end;
+    position: fixed;
+    padding: 0 10px 10px 10px; 
+    width: 300px;
+    height: auto;
+    background-color: white;
+    border-radius: 5px;
+    & img {
+        width: 100%;
+
+    }
+}
+.close {
+    display: block;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+
+
+
+
+* {
+    margin: 0;
+}
+.wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 100px;
+}
+
+.line {
+    color: $color2;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    // border-bottom: 2px solid $color2;
+
+    &__box1, &__box2, &__box3 {
+        background-color: $color;
+        margin: 0 10px 20px 10px;
+    }
+    &__box1 {
+        max-width: 150px;
+        flex-grow: 1;
+        height: 150px;
+        margin-left: 0;
+    }
+    &__box1 img {
+        width: 100%;
+    }
+    &__box2 {
+        flex-grow: 2;
+    }
+    &__box3 {
+        flex-grow: 3;
+        margin-right: 0;
+    }
+}
+
+main {
+    display: flex;
+    // flex-wrap: wrap;
+    
+    .aside {
+        flex-grow: 1;
+        margin: 0 25px 20px 0;
+        position: relative;
+        &__block {
+            width: 200px;
+            height: 450px;
+            background-color: $color;
+        }
+        &__img {
+            width: 200px;
+            height: 150px;
+            background-color: $color;
+            position: absolute;
+            bottom: 0;
+        }
+    }
+    .content {
+        flex-grow: 2;
+        width: 100%;
+        margin-bottom: 20px;
+        &__item {
+            max-width: 100%;
+            min-width: 300px;
+            height: 300px;
+            margin-bottom: 25px;
+            background-color: $color2;
+        }
+
+
+        &__num-card {
+            position: absolute;
+            top: auto;
+            color: greenyellow;
+            font-size: 25px;
+            top: 40%;
+            left: 50%;
+        }
+        &__wrapper-img {
+            display: inline-block;
+            position: relative;
+            width: 131px;
+            height: 150px;
+            margin: 23px 21px 0 -4px;
+        }
+
+
+
+        &__img {
+            width: 100%;
+            height: 100%;
+            // margin: 23px 21px 0 -4px;
+        }
+        &__img:nth-child(5) {
+            margin-right: 0;
+        }
+        // &__img:hover {
+        //     margin-top: -5px;
+        // }
+        &__wrapper-item {
+            display: flex;
+            justify-content: space-between;
+        }
+        &__box1, &__box2 {
+            width: 48.5%;
+            background-color: $color2;
+            height: 250px;
+            margin-top: 25px;
+        }
+    }
+}
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    &__div {
+        flex-grow: 1;
+        background-color: $color;
+        margin-right: 25px;
+        height: 250px;
+        min-width: 200px;
+    }
+    &__wrapper-div {
+        flex-grow: 1;
+        & div {
+            height: 115px;
+            margin-bottom: 20px;
+            background-color: $color;
+        }
+        & div:last-child {
+            margin-bottom: 0;
+        }
+        & div:last-child img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+}
+
+ @media screen and (max-width: 1376px) {
+    .content {
+        text-align: center;
+        &__gallery {
+            justify-content: center;
+        }
+        &__gallery img:nth-child(5){
+            margin: 23px 21px 0 0;
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .wrapper {
+        padding: 0 50px;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .wrapper {
+        padding: 0 20px;
+    }
+}
+
+ 
+@media screen and (max-width: 720px) {
+    .wrapper {
+        padding: 0 10px;
+    }
+    main {
+        flex-wrap: wrap;
+        & .aside {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin: 0 0 20px 0;
+            &__block {
+                width: 200px;
+                height: 150px;
+                margin-right: 20px;
+
+            }
+            &__img {
+                position: relative;
+            }
+        }
+    }   
+    .footer {
+        &__div {
+            min-width: 140px;
+            height: 150px;
+            margin-bottom: 20px;
+            &:nth-child(2){
+                margin-right: 0;
+            }
+        }
+        &__wrapper-div {
+            width: 100%;
+        }
+    }
+}
